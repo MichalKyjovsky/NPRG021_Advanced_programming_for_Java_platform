@@ -1,0 +1,1 @@
+cz.cuni.mff.java.plugins.shell.cz.cuni.mff.java.shell.commands.hello.HelloCommand

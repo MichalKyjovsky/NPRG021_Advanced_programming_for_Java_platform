@@ -1,0 +1,3 @@
+cz.cuni.mff.java.plugins.textprocessor.ToUpperProcessor
+cz.cuni.mff.java.plugins.textprocessor.DotToExclamationProcessor
+cz.cuni.mff.java.plugins.textprocessor.TextProcessor

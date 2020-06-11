@@ -1,0 +1,4 @@
+cz.cuni.mff.java.testing.example.SimpleTest3
+cz.cuni.mff.java.testing.example.SimpleTest4
+cz.cuni.mff.java.testing.example.SimpleTest2
+cz.cuni.mff.java.testing.example.SimpleTest

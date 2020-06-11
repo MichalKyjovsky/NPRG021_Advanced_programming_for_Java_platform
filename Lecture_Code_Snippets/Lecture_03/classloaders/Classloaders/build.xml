@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='us-ascii'?>
+<project basedir="." default="compile" name="">
+  <description></description>
+
+  <property name="src" location="src"/>
+  <property name="classes" location="classes"/>
+
+  <target name="init">
+    <mkdir dir="${classes}"/>
+  </target>
+
+  <target name="compile" depends="init" description="Compilation">
+    <javac includeantruntime="true" debug="true" destdir="${classes}" srcdir="${src}" includes="**/*.java" classpath="${src}" />
+  </target>
+
+  <target name="prepare" depends="compile">
+    <mkdir dir="www/RemoteClassLoaderTest"/>
+    <move file="${classes}/RemoteClassLoaderTest/MyClass.class" todir="www/RemoteClassLoaderTest" />
+  </target>
+
+  <target name="run" depends="prepare" description="Execute">
+    <java fork="true" classname="RemoteClassLoaderTest.Main" classpath="${classes}" />
+  </target>
+
+</project>

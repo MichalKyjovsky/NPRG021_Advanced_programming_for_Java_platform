@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='us-ascii'?>
+<project basedir="." default="compile" name="service loaders">
+
+  <property name="src" location="src"/>
+  <property name="classes" location="classes"/>
+  <property name="jars" location="jars"/>
+
+  <target name="init">
+    <mkdir dir="${classes}"/>
+    <mkdir dir="${jars}"/>
+  </target>
+
+  <target name="compile" depends="init" description="Compiles source">
+    <javac includeantruntime="false" debug="true" destdir="${classes}" srcdir="${src}" includes="**/*.java" classpath="${src}" />
+    <jar destfile="${jars}/P1.jar" basedir="${classes}" includes="**/P1.class">
+      <service type="cz.cuni.mff.java.plugin.Plugin" provider="cz.cuni.mff.java.plugin.P1" />
+    </jar>
+    <jar destfile="${jars}/P2.jar" basedir="${classes}" includes="**/P2.class">
+      <service type="cz.cuni.mff.java.plugin.Plugin" provider="cz.cuni.mff.java.plugin.P2" />
+    </jar>
+    <jar destfile="${jars}/P3.jar" basedir="${classes}" includes="**/P3.class">
+      <service type="cz.cuni.mff.java.plugin.Plugin" provider="cz.cuni.mff.java.plugin.P3" />
+    </jar>
+    <jar destfile="${jars}/app.jar" basedir="${classes}" excludes="**/P?.class"/>
+  </target>
+
+  <target name="run" depends="init,compile" description="Executes program">
+    <java fork="true" classname="cz.cuni.mff.java.plugin.Main" classpath="${classes}" >
+      <arg value="${params}"/>
+    </java>
+  </target>
+
+  <target name="clean" description="Deletes generated files">
+    <delete dir="${classes}"/>
+    <delete dir="${jars}"/>
+  </target>
+
+</project>

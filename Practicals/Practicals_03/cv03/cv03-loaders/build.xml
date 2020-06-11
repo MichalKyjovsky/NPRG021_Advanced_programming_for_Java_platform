@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='us-ascii'?>
+<project basedir="." default="compile" name="service loaders">
+
+    <property name="src" location="src"/>
+    <property name="classes" location="classes"/>
+    <property name="jars" location="jars"/>
+
+    <target name="init">
+        <mkdir dir="${classes}"/>
+        <mkdir dir="${jars}"/>
+    </target>
+
+    <target name="compile" depends="init" description="Compiles source">
+        <javac includeantruntime="false" debug="true" destdir="${classes}" srcdir="${src}" includes="**/*.java"
+               classpath="${src}"/>
+        <jar destfile="${jars}/hellocmd.jar" basedir="${classes}" includes="**/HelloCommand.class">
+            <service type="cz.cuni.mff.java.loaders.shell.Command"
+                     provider="cz.cuni.mff.java.loaders.shell.commands.HelloCommand"/>
+        </jar>
+        <jar destfile="${jars}/listcmd.jar" basedir="${classes}" includes="**/ListCommand.class">
+            <service type="cz.cuni.mff.java.loaders.shell.Command"
+                     provider="cz.cuni.mff.java.loaders.shell.commands.ListCommand"/>
+        </jar>
+        <jar destfile="${jars}/toupperproc.jar" basedir="${classes}" includes="**/ToUpperProcessor.class">
+            <service type="cz.cuni.mff.java.loaders.textprocessor.TextProcessor"
+                     provider="cz.cuni.mff.java.loaders.textprocessor.processors.ToUpperProcessor"/>
+        </jar>
+        <jar destfile="${jars}/dotproc.jar" basedir="${classes}" includes="**/DotToExclamationProcessor.class">
+            <service type="cz.cuni.mff.java.loaders.textprocessor.TextProcessor"
+                     provider="cz.cuni.mff.java.loaders.textprocessor.processors.DotToExclamationProcessor"/>
+        </jar>
+        <jar destfile="${jars}/shellapp.jar" basedir="${classes}" excludes="**/commands/*.class" includes="**/shell/*.class"/>
+        <jar destfile="${jars}/textapp.jar" basedir="${classes}" excludes="**/commands/*.class" includes="**/textprocessor/*.class"/>
+    </target>
+
+    <target name="clean" description="Deletes generated files">
+        <delete dir="${classes}"/>
+        <delete dir="${jars}"/>
+    </target>
+
+</project>
