@@ -24,6 +24,7 @@ public class MainWithDir {
                 System.exit(1);
             }
             try {
+//                Files.list(dir.toAbsolutePath()).forEach(System.out::println);
                 List<Path> jars = Files.list(dir).filter(p -> p.toString().endsWith(".jar")).collect(Collectors.toList());
                 List<URL> urls = new ArrayList<>();
                 for (Path path: jars) {

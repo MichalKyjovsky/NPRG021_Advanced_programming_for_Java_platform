@@ -15,6 +15,9 @@ public class Main {
         java.util.ArrayList<Plugin> plugins = new java.util.ArrayList<>();
         Class<Plugin> pluginIface = Plugin.class;
         plugins.add(new Internal());
+        plugins.add(new P1());
+        plugins.add(new P3());
+        plugins.add(new P4());
 
         for (String arg : args) {
             try {

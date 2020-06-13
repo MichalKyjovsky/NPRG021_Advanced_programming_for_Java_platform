@@ -44,6 +44,7 @@ public class Editor {
         //frame.add(exitButton, BorderLayout.SOUTH);
 
         frame.setJMenuBar(createMenu());
+        frame.add(createToolsPanel());
 
         frame.addWindowListener(new WindowAdapter() {
             @Override
@@ -58,6 +59,21 @@ public class Editor {
         frame.pack();
         frame.setSize(300, 200);
         frame.setVisible(true);
+    }
+
+    private static JPanel createToolsPanel() {
+        JPanel tools = new JPanel(new GridBagLayout());
+
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridwidth = GridBagConstraints.REMAINDER;
+        c.fill = GridBagConstraints.VERTICAL;
+        c.anchor = GridBagConstraints.PAGE_START;
+
+        JButton maximizeButton = new JButton();
+        maximizeButton.addActionListener(e -> frame.setSize(500, 500));
+        tools.add(maximizeButton);
+
+        return tools;
     }
 
     private static JPanel createButtonBar() {

@@ -17,11 +17,12 @@ public class Main {
                 System.out.println("Cannot read files with plugins. Exiting");
                 System.exit(1);
             }
-        } else {
+        } else {A
             System.out.println("Warning. No processors");
             processors = Collections.emptyList();
         }*/
-        ServiceLoader<TextProcessor> serviceLoader = ServiceLoader.load(TextProcessor.class);
+        System.out.println("");
+        ServiceLoader<TextProcessor> serviceLoader = ServiceLoader.load(TextProcessor.class, ClassLoader.getSystemClassLoader());
         try {
             int c;
             StringBuilder sb = new StringBuilder();

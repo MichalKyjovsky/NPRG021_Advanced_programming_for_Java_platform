@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="CheckStyle-IDEA-Module">
+    <option name="configuration">
+      <map />
+    </option>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Practicals_01/cv01-plugins/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Practicals_02/cv02/cv02-testing/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Practicals_03/cv03/cv03-loaders/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Practicals_05/cv05/cz.cuni.mff.java.swing.editor/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/Practicals_03/cv03/cv03-loaders/src" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>

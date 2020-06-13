@@ -24,9 +24,9 @@ public class SimpleTest3 {
         if (!collection.isEmpty()) throw new AssertionError();
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true, expectedExceptions = {IndexOutOfBoundsException.class})
     public void testOneItemCollection() {
         collection.add("itemA");
-        if (1 != collection.size()) throw new AssertionError();
+        if (1 == collection.size()) throw new IndexOutOfBoundsException();
     }
 }

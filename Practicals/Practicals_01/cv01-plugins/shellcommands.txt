@@ -1,1 +1,2 @@
-cz.cuni.mff.java.plugins.shell.cz.cuni.mff.java.shell.commands.hello.HelloCommand
+cz.cuni.mff.java.plugins.shell.HelloCommand
+cz.cuni.mff.java.plugins.shell.PrintICommand

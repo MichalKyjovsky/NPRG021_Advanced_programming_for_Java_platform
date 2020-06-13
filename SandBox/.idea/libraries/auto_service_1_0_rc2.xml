@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="auto-service-1.0-rc2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../Downloads/auto-service-1.0-rc2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

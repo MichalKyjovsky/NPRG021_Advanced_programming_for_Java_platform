@@ -48,7 +48,7 @@ public class Main {
         if (args.length > 0) {
             try {
                 List<String> lines = Files.readAllLines(Path.of(args[0]));
-                List<Command> lst = Loader.loadPlugins(Command.class, lines.toArray(new String[0]));
+                List<Command> lst = Loader.loadPlugins(Command.class, lines.toArray(new String[1]));
                 lst.forEach(cmd -> commands.put(cmd.getCommand(), cmd));
             } catch (IOException e) {
                 System.out.println("Cannot read file with plugin names. Exiting.");
